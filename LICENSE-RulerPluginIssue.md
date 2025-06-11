@@ -1,0 +1,14 @@
+# Ruler Plugin Issue
+
+This ticket was opened by the Middleware Team to support Justine Donovan, the Application Developer who is the main developer of the CKEditor application, which was opened on 17th April 2025 to report a critical issue preventing the implementation of the Ruler plugin in their application. The development team encountered a "duplicate module error" in the console log that persisted despite trying different plugin methods and changing the class of the plugin.
+
+The developer team has attempted to downgrade the CKEditor version, but it led to a "Heap Memory Error", that indicates insufficient memory during application bundling. These errors collectively made it impossible to integrate the Ruler plugin. Justine also sought solutions to these problems, including:
+- Latest release of the CKEditor version that supports the implementation of the Ruler prototype.
+- Ways to bypass the *duplicate_module error* to at least preview the plugin.
+- Offering additional source code to the principals for debugging.
+
+Aldona Cupial-Wozniak, who is the Customer Engagement Coordinator from CKSource, initially responded by asking for the current version of the Ruler prototype implementation and how packages were being imported. She suggested to adjust the imports in the Ruler plugin files if new installation methods were being used, and also suggesting Justine to migrate the documentation with advised to increasing the memory limit for the "heap out of memory" error in the build script. Our team later confirmed that the CKEditor ver. 43.0.0 and the new installation method was used during the development, but the errors continued.
+
+She requested that we specifically confirm if all of the imports in the ruler plugin files were change according to a new format, instead of separate imports from *ckeditor5/src/ui.js* and *ckeditor5/src/utils.js*. Because the error keeps on occurring, Martyna Wierzbicka, another Customer Support Coordinator, inquiring if Justine was using Vue integration. She questioned why the *Editor.create()* was being used in a script tag if it was a Vue integration, directing Justine to the official Vue.js integration guide. Justine and our team clarified that we had migrated to using the builder app on CKEditor website, and while it initially worked well, merging the ruler plugin resulted in a blank screen with no errors.
+
+She then provided a GitHub repository for reproduction. Aldona then provided the key solution that explains that the prior instructions were for Vanilla JS. For Vue, additional code was needed to be executed inside the *ready* event. She stated that they had also "adjusted the application so that it correctly displays the ruler" and attached the fixed code. Justine confirmed that "The ruler actually works" on his local project. The ticket status remains "Closed" since.

@@ -1,0 +1,3 @@
+# Italic Font Style Got Overlap on Exported PDF
+
+This ticket was opened by the Middleware Team to support Justine Donovan, the Application Developer who is the main developer of the CKEditor application, that are opened on 18th March 2025, with a concern on the export of italic font styles to PDF within CKEditor. The problem is that "whenever we export the italic font style into PDF some of those italic word(s) was got overlap because of the margin or spacing on CSS that we implement". Our team also noted that this overlap issue also tried on CKEditor demo web and also got overlap, suggesting it might be a widespread problem.
